@@ -1,18 +1,24 @@
 html
+  head 
+    link(rel="stylesheet", href="/css/styles.css")
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
   body 
-    h1= showdata.title
-    h2= showdata.seasons.number
-
-    table
-    for showdata in showdata
+    h1= title
+    h2= 'Season '+ season.number
+    table(style='width:100%', border='1')
       tr
-        td= showdata.seasons.episodes.number
-        td= showdata.seasons.episodes.title
-        td= showdata.seasons.episodes.director
+        th Number
+        th Title
+        th Director
+      tr
+        td 001
+        td Adam
+        td 25
+      tr
+        td 002
+        td rahul
+        td 27
+
     
-    
-    h1 Season
-    h2= season.number
-    ul 
-      for seasons in synopsis.seasons.number
-        li= season
