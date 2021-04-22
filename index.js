@@ -1,5 +1,5 @@
 const express = require('express')
-const synopsis = require('./showdata.js')
+const showdata = require('./showdata.js')
 
 const app = express()
 
@@ -8,11 +8,13 @@ app.set('view engine', 'pug')
 app.use(express.static('public'))
 
 app.get('/', (request, response) => {
-  response.render('index', { synopsis })
+  response.render('index', { showdata })
 })
 
-app.get('/', (request, response) => {
-  response.render('showdata', { synopsis })
+app.get('/showdata/:number', (request, response) => {
+  const showdata = showdata.find((showdata) => { return showdata.seasons.number === parseInt(request.params.number) })
+
+  return response.render('seasons', { showdata })
 })
 
 app.all('*'), (request, response) => {
