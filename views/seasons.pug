@@ -9,15 +9,17 @@ html
     h2= 'Season '+ season.number
     table(style='width:100%', border='1')
       tr
-        th Number
-        th Title
-        th Director
-      tr
+        th(class="titles") No.
+        th(class="titles") Title
+        th(class="titles") Director
       each episode in season.episodes
-        tr
+        tr(class="tr1")
           td= episode.number
           td= episode.title 
           td= episode.director
+        tr  
+          td(colspan=3)= episode.synopsis
+        
 
 
     
