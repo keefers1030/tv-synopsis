@@ -13,12 +13,11 @@ html
         th Title
         th Director
       tr
-        td 001
-        td Adam
-        td 25
-      tr
-        td 002
-        td rahul
-        td 27
+      each episode in season.episodes
+        tr
+          td= episode.number
+          td= episode.title 
+          td= episode.director
+
 
     
