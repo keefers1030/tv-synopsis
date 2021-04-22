@@ -1,5 +1,16 @@
 html
   body 
+    h1= showdata.title
+    h2= showdata.seasons.number
+
+    table
+    for showdata in showdata
+      tr
+        td= showdata.seasons.episodes.number
+        td= showdata.seasons.episodes.title
+        td= showdata.seasons.episodes.director
+    
+    
     h1 Season
     h2= season.number
     ul 

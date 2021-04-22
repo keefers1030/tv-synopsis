@@ -11,10 +11,12 @@ app.get('/', (request, response) => {
   response.render('index', { showdata })
 })
 
-app.get('/showdata/:number', (request, response) => {
-  const showdata = showdata.find((showdata) => { return showdata.seasons.number === parseInt(request.params.number) })
+app.get('/seasons/:number', (request, response) => {
+  const showseason = showdata.seasons.find((season) => { 
+    return showdata.seasons.number === parseInt(request.params.number)
+  })
 
-  return response.render('seasons', { showdata })
+  return response.render('seasons', { season: showseason, 'title': showdata.title })
 })
 
 app.all('*'), (request, response) => {
