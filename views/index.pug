@@ -4,15 +4,23 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
+    title TV Synopsis
   body 
     h1= synopsis.title 
       h2 Developed By
       p
       ul 
-      each val in [{1:'a'}, {1:2}, {1:3}, {1:4}, {1:5}]
-        li= synopsis.developedBy
+      each developedBy in synopsis.developedBy
+        li= developedBy
       h2 Starring
       p 
       ul
-        li= synopsis.starring
+      each starring in synopsis.starring
+        li= starring
+      h2 Seasons 
+      p 
+      ul
+        for season in synopsis.seasons 
+        li 
+          a(href=`/showdata/${synopsis.seasons.number})`='Season'+seasons.number
+

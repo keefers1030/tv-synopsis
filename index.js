@@ -11,6 +11,10 @@ app.get('/', (request, response) => {
   response.render('index', { synopsis })
 })
 
+app.get('/', (request, response) => {
+  response.render('showdata', { synopsis })
+})
+
 app.all('*'), (request, response) => {
   return request.sendStatus(404)
 }
