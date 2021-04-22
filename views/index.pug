@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title TV-Show Data
+  body 
+    h1= showdata.title 
+      h2 Developed By
+      p
+      ul 
+      each developedBy in showdata.developedBy
+        li= developedBy
+      h2 Starring
+      p 
+      ul
+      each starring in showdata.starring
+        li= starring
+      h2 Seasons
+      ul
+        for season in showdata.seasons
+          li
+          a(href=`/seasons/${season.number}`)= 'Season '+season.number

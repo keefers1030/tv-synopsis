@@ -1,0 +1,30 @@
+body {
+  background-color: white;
+  font-family:'Times New Roman', Times, serif;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  max-width:70%; 
+  min-width: 40%;
+  margin-left:15%; 
+  margin-right:15%;
+  }
+
+h2{
+  text-align: center;
+}
+
+.titles {
+  background-color:cornflowerblue;
+  color: white;
+}
+
+.tr1{
+  text-align: center;
+}
+
+td, th{
+  padding: .5rem;
+}
